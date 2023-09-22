@@ -1,0 +1,22 @@
+sequenceDiagram
+    Title: 0.4: Nova Nota
+
+    loop POST Method
+        browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+        server-->browser: HTML
+        browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+        server-->browser: main.css
+        browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+        server-->browser: main.js
+
+        Nota browser: O browser começa a executar o código JS que faz um pedido de dados JSON através do servidor
+
+        browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+        server-->browser: [{ content: "Top G", date: "2023-09-22" }, ...]
+
+        Nota browser: O browser executa o evento princiapl que apresenta as notas no ecrã
+
+        browser->server: HTTP POST {note: 'Your inputting content.'}
+
+        Nota browser: A página é atualizada
+    end
