@@ -1,5 +1,5 @@
 sequenceDiagram
-    Title: 0.4: Nova Nota
+    Title: 0.4: nova nota
 
     loop POST Method
         browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
@@ -9,14 +9,14 @@ sequenceDiagram
         browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
         server-->browser: main.js
 
-        Nota browser: O browser começa a executar o código JS que faz um pedido de dados JSON através do servidor
+        note over browser: O browser começa a executar o código JS que faz um pedido de dados JSON através do servidor
 
         browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
-        server-->browser: [{ content: "Top G", date: "2023-09-22" }, ...]
+        server-->browser:  content: "whatever, just a simple content", date: "2020-11-30" , ...
 
-        Nota browser: O browser executa o evento princiapl que apresenta as notas no ecrã
+        note over browser: O browser executa o evento princiapl que apresenta as notas no ecrã
 
-        browser->server: HTTP POST {note: 'Your inputting content.'}
+        browser->server: HTTP POST note: 'Your inputting content.'}
 
-        Nota browser: A página é atualizada
+        note over browser: A página é atualizada
     end
