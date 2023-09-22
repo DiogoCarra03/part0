@@ -12,11 +12,11 @@ sequenceDiagram
         note over browser: O browser começa a executar o código JS que faz um pedido de dados JSON através do servidor
 
         browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
-        server-->browser:  content: "whatever, just a simple content", date: "2020-11-30" , ...
+        server-->browser:  content: "Top G", date: "2023-09-22" , ...
 
         note over browser: O browser executa o evento princiapl que apresenta as notas no ecrã
 
-        browser->server: HTTP POST note: 'Your inputting content.'}
+        browser->server: HTTP POST note: 'Conteúdo'}
 
         note over browser: A página é atualizada
     end
