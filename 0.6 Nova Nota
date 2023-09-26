@@ -1,0 +1,24 @@
+sequenceDiagram
+    Title: 0.6: nova nota
+
+        browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+        server-->browser: HTML
+        browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+        server-->browser: main.css
+        browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+        server-->browser: main.js
+
+        note over browser: O browser começa a executar o código JS que faz um pedido de dados JSON através do servidor
+
+        browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+        server-->browser:  content: "Top G", date: "2023-09-22" , ...
+
+        note over browser: O browser executa o evento princiapl que apresenta as notas no ecrã
+
+        browser->server: HTTP POST { content: "Jesus", date: "2023-09-22" }
+
+        note over browser: O evento principal js permite parar a atualização da página
+
+        server-->browser: [{ content: "Cristo", date: "2023-09-22" }, ..., { content: "OMG", date: "2023-09-22" }]
+
+        note over browser: O browser executa o evento princiapl que apresenta as notas no ecrã
